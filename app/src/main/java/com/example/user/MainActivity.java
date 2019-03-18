@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,5 +28,17 @@ public class MainActivity extends AppCompatActivity {
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         ip="192.168.137.111:5000";
+
+        SharedPreferences.Editor ed=sh.edit();
+        ed.putString("ip",ip);
+        ed.commit();
+        ip=sh.getString("ip","");
+        ur="http://"+ip+"/registration";
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = e5.getText().toString();
+                String mail = e6.getText().toString();
+
     }
 }

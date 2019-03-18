@@ -1,6 +1,8 @@
 package com.example.user;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class registration extends AppCompatActivity {
 
     EditText e1, e2, e3, e4;
     Button b1;
+    String ip="";
+    SharedPreferences sh;
     JSONParser jsonParser = new JSONParser();
    // SharedPreferences sh;
     public static String ur;
@@ -26,7 +38,15 @@ public class registration extends AppCompatActivity {
         e3 = (EditText) findViewById(R.id.editText21);
         e4 = (EditText) findViewById(R.id.editText22);
         b1 = (Button) findViewById(R.id.button);
-        ur="http://192.168.137.111:5000/webservice.py";
+        sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        ip="192.168.137.111:5000";
+
+        SharedPreferences.Editor ed=sh.edit();
+        ed.putString("ip",ip);
+        ed.commit();
+        ip=sh.getString("ip","");
+        ur="http://"+ip+"/registration";
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,5 +1,7 @@
 package com.example.user;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,6 +11,11 @@ public class MainActivity extends AppCompatActivity {
     EditText e5,e6;
     Button b3,b2;
 
+    String ip="";
+    SharedPreferences sh;
+    JSONParser jsonParser = new JSONParser();
+    // SharedPreferences sh;
+    public static String ur;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,5 +24,8 @@ public class MainActivity extends AppCompatActivity {
         b3=(Button)findViewById(R.id.button16);
         e5=(EditText)findViewById(R.id.editText7);
         e6=(EditText)findViewById(R.id.editText8);
+        sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        ip="192.168.137.111:5000";
     }
 }

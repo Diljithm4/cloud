@@ -1,5 +1,6 @@
 package com.example.user;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -65,21 +66,21 @@ public class registration extends AppCompatActivity {
                 JSONObject jobj = null;
                 try {
                     jobj = (JSONObject) jsonParser.makeHttpRequest(ur, "GET", params);
-                } catch (JSONException e1) {
+                } catch (JSONException e) {
                     // TODO Auto-generated catch block
-                    Toast.makeText(getApplicationContext(), "e111" + e1, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "e111" + e, Toast.LENGTH_LONG).show();
                 }
-                String s = null;
 
                 try {
 
                     String ss = jobj.getString("task");
 
-                    if (ss.equals("invalid")) {
+                    if (ss.equals("failed")) {
 
 
                     } else {
 
+                        Toast.makeText(getApplicationContext(),"Registerd ",Toast.LENGTH_LONG).show();
 
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);

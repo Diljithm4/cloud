@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        e5=(EditText)findViewById(R.id.editText22);
+        e6=(EditText)findViewById(R.id.editText23);
         b2=(Button)findViewById(R.id.button15);
         b3=(Button)findViewById(R.id.button16);
-        e5=(EditText)findViewById(R.id.editText7);
-        e6=(EditText)findViewById(R.id.editText8);
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        ip="192.168.137.111:5000";
+        ip="192.168.43.39:5000";
 
         SharedPreferences.Editor ed=sh.edit();
         ed.putString("ip",ip);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
         ip=sh.getString("ip","");
         ur="http://"+ip+"/login";
-        b2.setOnClickListener(new View.OnClickListener() {
+        b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = e5.getText().toString();
@@ -80,12 +80,12 @@ public class MainActivity extends AppCompatActivity {
                     String ss = jobj.getString("task");
 
                     if (ss.equals("failed")) {
-
+                        Toast.makeText(getApplicationContext(), "invalid", Toast.LENGTH_LONG).show();
 
                     } else {
 
 
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
                         startActivity(i);
 
                     }

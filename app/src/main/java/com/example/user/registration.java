@@ -80,7 +80,7 @@ public class registration extends AppCompatActivity {
 
                     } else {
 
-                        Toast.makeText(getApplicationContext(),"Registerd ",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Successfully Registerd ",Toast.LENGTH_LONG).show();
 
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);

@@ -13,12 +13,13 @@
         android:layout_marginBottom="15dp"
         android:gravity="center">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="208dp"
-            android:layout_height="41dp"
-            android:hint="FIle path"
-            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="file name"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/button5"

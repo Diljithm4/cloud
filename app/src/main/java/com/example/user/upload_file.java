@@ -65,16 +65,16 @@ public class upload_file extends AppCompatActivity {
                 @Override
                 public void onClick(View arg0) {
                     // TODO Auto-generated method stub
+                    uploadFile(path1);
 
-
-                    int res = uploadFile(path1);
-                    if (res == 1) {
-                        Toast.makeText(getApplicationContext(), " uploaded", Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
-                        startActivity(i);
-                    } else {
-                        Toast.makeText(getApplicationContext(), " error", Toast.LENGTH_LONG).show();
-                    }
+//                    int res = uploadFile(path1);
+//                    if (res == 1) {
+//                        Toast.makeText(getApplicationContext(), " uploaded", Toast.LENGTH_LONG).show();
+//                        Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
+//                        startActivity(i);
+//                    } else {
+//                        Toast.makeText(getApplicationContext(), " error", Toast.LENGTH_LONG).show();
+//                    }
                 }
 
 
@@ -148,13 +148,12 @@ public class upload_file extends AppCompatActivity {
     public int uploadFile(String sourceFileUri) {
 
         fileName = sourceFileUri;
-        String upLoadServerUri ="http://"+ip+":5000/Post_img";
-        // Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
+        String upLoadServerUri ="http://192.168.43.39:5000/post_img";
+         Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
         FileUpload fp = new FileUpload(fileName);
         Map mp = new HashMap<String,String>();
 
         mp.put("id", id);
-
         fp.multipartRequest(upLoadServerUri, mp, fileName, "files", "application/octet-stream");
         return 1;
     }

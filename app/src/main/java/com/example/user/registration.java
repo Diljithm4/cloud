@@ -41,7 +41,7 @@ public class registration extends AppCompatActivity {
         b1 = (Button) findViewById(R.id.button);
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        ip="192.168.137.111:5000";
+        ip="192.168.43.172";
 
         SharedPreferences.Editor ed=sh.edit();
         ed.putString("ip",ip);

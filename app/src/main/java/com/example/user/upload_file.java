@@ -1,7 +1,9 @@
 package com.example.user;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,7 +31,7 @@ public class upload_file extends AppCompatActivity {
     String id="",ip="",ur="",caption="";
     JSONParser jsonParser = new JSONParser();
     String path,fileName,attach,type,fname;
-
+SharedPreferences sh;
 
 
     @Override
@@ -37,7 +39,7 @@ public class upload_file extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_file);
 
-
+sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             e7 = (EditText) findViewById(R.id.editText2);
             b4 = (Button) findViewById(R.id.button5);
             b5 = (Button) findViewById(R.id.button7);
@@ -148,12 +150,11 @@ public class upload_file extends AppCompatActivity {
     public int uploadFile(String sourceFileUri) {
 
         fileName = sourceFileUri;
-        String upLoadServerUri ="http://192.168.43.39:5000/post_img";
+        String upLoadServerUri ="http://192.168.43.172:5000/post_img";
          Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
         FileUpload fp = new FileUpload(fileName);
         Map mp = new HashMap<String,String>();
-
-        mp.put("id", id);
+        mp.put("id",sh.getString("id","") );
         fp.multipartRequest(upLoadServerUri, mp, fileName, "files", "application/octet-stream");
         return 1;
     }

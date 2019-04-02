@@ -6,8 +6,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,16 +16,20 @@
         android:roundIcon="@mipmap/cloud"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".upload_file">
+        <activity android:name=".image_view"></activity>
 
-        </activity>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".upload_file"></activity>
         <activity
             android:name=".cloud_home_new"
             android:label="@string/title_activity_cloud_home_new"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".applist" />
-        <activity android:name=".forgot_password"></activity>
-        <activity android:name=".registration"></activity>
+        <activity android:name=".forgot_password" />
+        <activity android:name=".registration" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

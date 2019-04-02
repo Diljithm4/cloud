@@ -73,6 +73,8 @@ public class cloud_home_new extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
             return true;
         }
 

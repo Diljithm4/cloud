@@ -7,12 +7,14 @@ import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
+
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,9 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jobj = null;
                 try {
                     jobj = (JSONObject) jsonParser.makeHttpRequest(ur, "GET", params);
+                    //Toast.makeText(getApplicationContext(),"rere"+ur,Toast.LENGTH_LONG).show();
                 } catch (JSONException e1) {
                     // TODO Auto-generated catch block
-                    Toast.makeText(getApplicationContext(), "e111" + e1, Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), "e1" + e1, Toast.LENGTH_LONG).show();
                 }
                 String s = null;
 
@@ -84,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
                     } else {
 
-                        SharedPreferences.Editor ed=sh.edit();
-                        ed.putString("id",ss);
-                        ed.commit();
+                        SharedPreferences.Editor ed2=sh.edit();
+                        ed2.putString("id",ss);
+                        ed2.commit();
 
                         Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
                         startActivity(i);
@@ -95,13 +98,19 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } catch (Exception e) { // TODO Auto-generated catch block
-
-                    Toast.makeText(getApplicationContext(), "e       " + e, Toast.LENGTH_LONG).show();
+                    Log.d("err",e+"");
+                 //   Toast.makeText(getApplicationContext(), "e" + e, Toast.LENGTH_LONG).show();
                 }
 
             }
         });
-
+            b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),registration.class);
+                startActivity(i);
+            }
+});
     }
 
     }

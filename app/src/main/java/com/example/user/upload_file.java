@@ -69,14 +69,14 @@ sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                     // TODO Auto-generated method stub
                     uploadFile(path1);
 
-//                    int res = uploadFile(path1);
-//                    if (res == 1) {
-//                        Toast.makeText(getApplicationContext(), " uploaded", Toast.LENGTH_LONG).show();
-//                        Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
-//                        startActivity(i);
-//                    } else {
-//                        Toast.makeText(getApplicationContext(), " error", Toast.LENGTH_LONG).show();
-//                    }
+                    int res = uploadFile(path1);
+                    if (res == 1) {
+                        Toast.makeText(getApplicationContext(), " uploaded", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
+                        startActivity(i);
+                    } else {
+                        Toast.makeText(getApplicationContext(), " error", Toast.LENGTH_LONG).show();
+                    }
                 }
 
 
@@ -151,7 +151,7 @@ sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         fileName = sourceFileUri;
         String upLoadServerUri ="http://192.168.43.172:5000/post_img";
-         Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
+//         Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
         FileUpload fp = new FileUpload(fileName);
         Map mp = new HashMap<String,String>();
         mp.put("id",sh.getString("id","") );

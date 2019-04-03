@@ -16,13 +16,14 @@
         android:roundIcon="@mipmap/cloud"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".image_view"></activity>
+        <activity android:name=".image_custom"></activity>
+        <activity android:name=".image_view" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".upload_file"></activity>
+        <activity android:name=".upload_file" />
         <activity
             android:name=".cloud_home_new"
             android:label="@string/title_activity_cloud_home_new"

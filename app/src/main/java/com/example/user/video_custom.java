@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class image_custom extends BaseAdapter{
+public class video_custom extends BaseAdapter{
 
     private Context context;
 
@@ -25,10 +25,10 @@ public class image_custom extends BaseAdapter{
     SharedPreferences sp;
 
 
-    public image_custom(Context applicationContext,ArrayList<String> img) {
+    public video_custom(Context applicationContext,ArrayList<String> vid) {
         this.context=applicationContext;
         //this.a=x;
-        this.c=img;
+        this.c=vid;
 
     }
 
@@ -71,7 +71,7 @@ public class image_custom extends BaseAdapter{
         }
 
 
-        ImageView img=(ImageView)gridView.findViewById(R.id.imageView2);
+        ImageView vid=(ImageView)gridView.findViewById(R.id.imageView3);
 
         sp=PreferenceManager.getDefaultSharedPreferences(context);
         java.net.URL thumb_u;
@@ -82,7 +82,7 @@ public class image_custom extends BaseAdapter{
 
             thumb_u = new java.net.URL("http://"+sp.getString("ip","")+"/static/file_upload/"+c.get(position));
             Drawable thumb_d = Drawable.createFromStream(thumb_u.openStream(), "src");
-            img.setImageDrawable(thumb_d);
+            vid.setImageDrawable(thumb_d);
 
 
         }

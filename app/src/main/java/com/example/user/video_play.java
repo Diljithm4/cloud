@@ -18,17 +18,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class image_view extends AppCompatActivity {
-    ListView L1;
+public class video_play extends AppCompatActivity {
+    ListView L2;
     SharedPreferences sp;
     String url="";
     JSONParser parser=new JSONParser();
-    ArrayList<String> img;
+    ArrayList<String> vid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
-        L1 = (ListView) findViewById(R.id.list);
+        L2 = (ListView) findViewById(R.id.list);
         sp= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         try {
             url = "http://"+ sp.getString("ip", "") +"/image_view";
@@ -42,14 +42,14 @@ public class image_view extends AppCompatActivity {
                 e.printStackTrace();
             }
             Log.d("11111111", ar + "");
-            img = new ArrayList<String>();
+            vid = new ArrayList<String>();
             for (int i = 0; i < ar.length(); i++) {
                 JSONObject js = ar.getJSONObject(i);
-                img.add(js.getString("file_name"));
+                vid.add(js.getString("file_name"));
                 // L1.setAdapter(new Custom(getApplicationContext(),img));
 
             }
-            L1.setAdapter(new image_custom(getApplicationContext(),img));
+            L2.setAdapter(new image_custom(getApplicationContext(),vid));
 
 
         }

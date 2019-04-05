@@ -92,7 +92,13 @@ public class cloud_home_new extends AppCompatActivity
              Intent i = new Intent(getApplicationContext(), image_view.class);
              startActivity(i);
              return true;
-        } else if (id == R.id.nav_file) {
+        }
+        else if (id == R.id.nav_video) {
+
+            Intent i = new Intent(getApplicationContext(), video_play.class);
+            startActivity(i);
+            return true;
+        }else if (id == R.id.nav_file) {
 
         } else if (id == R.id.nav_share) {
 

@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/cloud"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".image_custom"></activity>
+        <activity android:name=".video_play"></activity>
+        <activity android:name=".video_custom" />
+        <activity android:name=".image_custom" />
         <activity android:name=".image_view" />
 
         <uses-library

@@ -67,7 +67,7 @@ sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 @Override
                 public void onClick(View arg0) {
                     // TODO Auto-generated method stub
-                    uploadFile(path1);
+//                    uploadFile(path1);
 
                     int res = uploadFile(path1);
                     if (res == 1) {

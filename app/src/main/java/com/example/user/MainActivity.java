@@ -1,10 +1,14 @@
 package com.example.user;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sh;
     JSONParser jsonParser = new JSONParser();
     public static String ur;
+
+    public static boolean hasPermissions(Context context, String... permissions) {
+        if (context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +56,20 @@ public class MainActivity extends AppCompatActivity {
         b3=(Button)findViewById(R.id.button16);
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        ip="192.168.43.39:5000";
+        ip="192.168.43.172:5000";
 
         SharedPreferences.Editor ed=sh.edit();
         ed.putString("ip",ip);
         ed.commit();
+
+        int PERMISSION_ALL = 1;
+        String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION};
+
+        if(!hasPermissions(this, PERMISSIONS)){
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
+
+
         try {
             if(Build.VERSION.SDK_INT>9)
             {

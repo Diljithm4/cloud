@@ -31,7 +31,7 @@ public class video_play extends AppCompatActivity {
         L2 = (ListView) findViewById(R.id.list);
         sp= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         try {
-            url = "http://"+ sp.getString("ip", "") +"/video_view";
+            url = "http://"+ sp.getString("ip", "") +"/image_view";
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("id",sp.getString("id","")));;
 

@@ -1,34 +1,32 @@
 package com.example.user;
 
-
 import java.util.ArrayList;
 
+
+
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class video_custom extends BaseAdapter{
 
     private Context context;
+    ArrayList<String> a;
 
 
-    ArrayList<String> c;
+
     SharedPreferences sp;
-
-
-    public video_custom(Context applicationContext,ArrayList<String> vid) {
+    String ip="";
+    public video_custom(Context applicationContext, ArrayList<String> a) {
+        // TODO Auto-generated constructor stub
         this.context=applicationContext;
-        //this.a=x;
-        this.c=vid;
+        this.a=a;
 
     }
 
@@ -37,7 +35,7 @@ public class video_custom extends BaseAdapter{
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return c.size();
+        return a.size();
     }
 
     @Override
@@ -61,60 +59,32 @@ public class video_custom extends BaseAdapter{
         if(convertView==null)
         {
             gridView=new View(context);
-            gridView=inflator.inflate(R.layout.activity_image_custom, null);
+            gridView=inflator.inflate(R.layout.activity_video_custom,null);
 
         }
         else
         {
             gridView=(View)convertView;
-
         }
 
-
-        ImageView vid=(ImageView)gridView.findViewById(R.id.imageView3);
-
-        sp=PreferenceManager.getDefaultSharedPreferences(context);
-        java.net.URL thumb_u;
-        try {
-            String url="http://"+sp.getString("ip","")+"/static/file_upload/"+c.get(position);
-
-            Toast.makeText(context, url, Toast.LENGTH_LONG).show();
-
-            thumb_u = new java.net.URL("http://"+sp.getString("ip","")+"/static/file_upload/"+c.get(position));
-            Drawable thumb_d = Drawable.createFromStream(thumb_u.openStream(), "src");
-            vid.setImageDrawable(thumb_d);
+        TextView tv1=(TextView)gridView.findViewById(R.id.textView);
 
 
-        }
-        catch(Exception e){
+        tv1.setText(a.get(position));
 
-        }
 
-//		java.net.URL thumb_u;
-//		try {
-////
-//
-//
-//			String urll="http://"+Ipsettings.ip+"//women%20security//upload//"+b[position];
-//			Picasso.with(Context)
-//		    .load(urll)
-//		    //.transform(new Circulartransform())
-//		    .error(R.drawable.c)
-//		    .into(img);
-//
-//
-//
-//		}
-//		catch(Exception e){
-//
-//		}
-//
-
+        tv1.setTextColor(Color.BLACK);
 
 
         return gridView;
 
     }
+
+    private ContentResolver getContentResolver() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 
 
 

@@ -31,7 +31,7 @@ public class video_play extends AppCompatActivity {
         L2 = (ListView) findViewById(R.id.list);
         sp= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         try {
-            url = "http://"+ sp.getString("ip", "") +"/image_view";
+            url = "http://"+ sp.getString("ip", "") +"/video_view";
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("id",sp.getString("id","")));;
 
@@ -49,7 +49,7 @@ public class video_play extends AppCompatActivity {
                 // L1.setAdapter(new Custom(getApplicationContext(),img));
 
             }
-            L2.setAdapter(new image_custom(getApplicationContext(),vid));
+            L2.setAdapter(new video_custom(getApplicationContext(),vid));
 
 
         }

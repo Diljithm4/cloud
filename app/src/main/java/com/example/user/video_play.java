@@ -1,5 +1,6 @@
 package com.example.user;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +65,9 @@ public class video_play extends AppCompatActivity implements AdapterView.OnItemC
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent i = new Intent(getApplicationContext(), video_play2.class);
+        i.putExtra("filename",vid.get(position));
+        startActivity(i);
 
     }
 }

@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".offload">
 
+    <Button
+        android:id="@+id/btoffload"
+        android:layout_width="181dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginLeft="113dp"
+        android:layout_marginTop="341dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginRight="113dp"
+        android:layout_marginBottom="345dp"
+        android:text="Offload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

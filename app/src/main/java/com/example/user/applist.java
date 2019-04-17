@@ -21,7 +21,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Viewapps extends Activity  {
+public class applist extends Activity  {
 
     ArrayList<String> packageList;
     ArrayList<String> versionName;

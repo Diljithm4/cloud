@@ -19,9 +19,9 @@ ArrayList<String> id,fname,fsz,ftype,conbtry,nw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_analysis);
+        setContentView(R.layout.activity_offload);
         
-        l=(ListView)findViewById(R.id.listView1);
+        l=(ListView)findViewById(R.id.list2);
         
         id=new ArrayList<String>();
         fname=new ArrayList<String>();
@@ -56,7 +56,7 @@ ArrayList<String> id,fname,fsz,ftype,conbtry,nw;
 				}while(cr.moveToNext());
 				
 			//	Toast.makeText(getApplicationContext(), id.size()+""+"\n"+fname.size()+""+"\n"+fsz+""+"\n"+ftype.size()+"\n"+conbtry.size()+"\n"+nw.size()+"\n"+conversion.size()+"", Toast.LENGTH_LONG).show();
-				
+
 				l.setAdapter(new Custom(getApplicationContext(), fname, fsz, conbtry, nw));
 			}
 			cr.close();

@@ -99,6 +99,15 @@ public class cloud_home_new extends AppCompatActivity
             startActivity(i);
             return true;
         }else if (id == R.id.nav_file) {
+             Intent i = new Intent(getApplicationContext(), file_view.class);
+             startActivity(i);
+             return true;
+
+
+         } else if (id == R.id.nav_view) {
+             Intent i = new Intent(getApplicationContext(), applist.class);
+             startActivity(i);
+             return true;
 
         } else if (id == R.id.nav_share) {
 

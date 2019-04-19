@@ -29,7 +29,7 @@ public class applist extends Activity  {
     ArrayList<PackageInfo> pkgeList;
     EditText search;
     String app;
-    SearchView s1;
+//    SearchView s1;
     public static   ArrayList<Drawable> drawables;
     ArrayList<String> packageList1;
     ArrayList<String> versionName1;
@@ -113,23 +113,23 @@ public class applist extends Activity  {
 
 
 
-        s1.setOnQueryTextListener(new OnQueryTextListener() {
-
-            @Override
-            public boolean onQueryTextSubmit(String arg0) {
-                // TODO Auto-generated method stub
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String arg0) {
-                // TODO Auto-generated method stub
-                app=arg0;
-                //Toast.makeText(getApplicationContext(), arg0, Toast.LENGTH_LONG).show();
-
-                return true;
-            }
-        });
+//        s1.setOnQueryTextListener(new OnQueryTextListener() {
+//
+//            @Override
+//            public boolean onQueryTextSubmit(String arg0) {
+//                // TODO Auto-generated method stub
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String arg0) {
+//                // TODO Auto-generated method stub
+//                app=arg0;
+//                //Toast.makeText(getApplicationContext(), arg0, Toast.LENGTH_LONG).show();
+//
+//                return true;
+//            }
+//        });
 
 
 

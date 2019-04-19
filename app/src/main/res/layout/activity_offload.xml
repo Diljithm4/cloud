@@ -7,7 +7,7 @@
     tools:context=".offload">
 
     <Button
-        android:id="@+id/btoffload"
+        android:id="@+id/offload1"
         android:layout_width="181dp"
         android:layout_height="45dp"
         android:layout_marginStart="113dp"
@@ -19,6 +19,40 @@
         android:text="Offload"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginBottom="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="select "
+        app:layout_constraintBottom_toTopOf="@+id/btoffload"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/browse1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="53dp"
+        android:text="browse"
+        app:layout_constraintBottom_toTopOf="@+id/btoffload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText4"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

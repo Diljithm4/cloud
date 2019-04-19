@@ -107,6 +107,7 @@ public class cloud_home_new extends AppCompatActivity
          } else if (id == R.id.nav_view) {
              Intent i = new Intent(getApplicationContext(), applist.class);
              startActivity(i);
+
              return true;
 
         } else if (id == R.id.nav_share) {

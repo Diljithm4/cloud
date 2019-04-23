@@ -1,4 +1,4 @@
-package com.example.fairplay;
+package com.example.user;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,6 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import com.squareup.picasso.Downloader;
 
 import org.json.JSONObject;
 
@@ -73,13 +75,13 @@ public class Viewdetails extends Activity implements View.OnClickListener {
         final String p=sh.getString("permission","");
         String aaa=sh.getString("m","");
         if(aaa.equalsIgnoreCase("1")) {
-            Drawable dr = Viewapps.drawables.get(im);
+            Drawable dr = applist.drawables.get(im);
             img.setImageDrawable(dr);
         }
         else
         {
-            Drawable dr = NewApplicationCheck.dr;
-            img.setImageDrawable(dr);
+//            Drawable dr = NewApplicationCheck.dr;
+//            img.setImageDrawable(dr);
         }
         review.setOnClickListener(this);
         ok.setOnClickListener(this);
@@ -132,7 +134,7 @@ public class Viewdetails extends Activity implements View.OnClickListener {
                                     ok.setVisibility(View.INVISIBLE);
 
                                 String r=js.getString("reviews");
-                                //Toast.makeText(getApplicationContext(),r,Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(),r,Toast.LENGTH_LONG).show();
                                 SharedPreferences sharedPreferences=PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                                 SharedPreferences.Editor e=sharedPreferences.edit();
                                 e.putString("rev",r);
@@ -246,7 +248,7 @@ public class Viewdetails extends Activity implements View.OnClickListener {
 
                     }
                 },
-                new Response.ErrorListener() {
+                new Downloader.Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
@@ -276,8 +278,8 @@ public class Viewdetails extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if(view==review) {
-            Intent i = new Intent(getApplicationContext(), Reviews.class);
-            startActivity(i);
+//            Intent i = new Intent(getApplicationContext(), Reviews.class);
+//            startActivity(i);
         }
         if(view==ok)
         {
@@ -287,7 +289,7 @@ public class Viewdetails extends Activity implements View.OnClickListener {
             Uri packageURI = Uri.parse("package:"+app);
             Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageURI);
             startActivity(uninstallIntent);
-            Intent p=new Intent(getApplicationContext(),Viewapps.class);
+            Intent p=new Intent(getApplicationContext(),applist.class);
             startActivity(p);
         }
     }

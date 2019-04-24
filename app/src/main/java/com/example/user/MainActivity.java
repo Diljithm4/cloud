@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         b3=(Button)findViewById(R.id.button16);
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        ip="192.168.43.39:5000";
+        ip="192.168.43.172:5000";
 
         SharedPreferences.Editor ed=sh.edit();
         ed.putString("ip",ip);

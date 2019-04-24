@@ -65,7 +65,7 @@ public class JSONParser {
             if(method == "POST"){
                 // request method is POST
                 // defaultHttpClient
-
+                Log.d("in post=======",url);
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 HttpPost httpPost = new HttpPost(url);
                 httpPost.setEntity(new UrlEncodedFormEntity(params));
@@ -76,7 +76,7 @@ public class JSONParser {
 
             }else if(method == "GET"){
                 // request method is GET
-
+                Log.d("in get=======",url);
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 String paramString = URLEncodedUtils.format(params, "utf-8");
                 url += "?" + paramString;
@@ -112,15 +112,15 @@ public class JSONParser {
 
         // try parse the string to a JSON object
         try {
-        	 Log.d("JSON Parser " ,"failed");
-             jObj = new JSONObject(json);
+            Log.d("JSON Parser " ,"ererer");
+            jObj = new JSONObject(json);
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
             JSONArray jsar=new JSONArray(json);
             return jsar;
         }
         Log.e("JSON Parser", "xxxxxxxxxxxxxxx " );
-        
+
         // return JSON String
         return jObj;
 

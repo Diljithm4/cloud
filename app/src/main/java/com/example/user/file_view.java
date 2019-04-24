@@ -37,7 +37,7 @@ public class file_view extends AppCompatActivity {
 
             JSONArray ar = null;
             try {
-                ar = (JSONArray) parser.makeHttpRequest(url, "GET", params);
+                ar = (JSONArray)parser.makeHttpRequest(url, "GET", params);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

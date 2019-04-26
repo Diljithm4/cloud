@@ -1,5 +1,7 @@
 package com.example.user;
 
+import android.content.Intent;
+
 public class viewdetails {
 
     private String PackageName;
@@ -12,6 +14,7 @@ public class viewdetails {
 
     public String getPackageName() {
         return PackageName;
+        Intent in=new Intent(viewdetails.this,PostInstalledApps.class);
     }
 
     public void setPackageName(String packageName) {

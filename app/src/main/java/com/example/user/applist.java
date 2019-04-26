@@ -86,7 +86,7 @@ public class applist extends AppCompatActivity implements AdapterView.OnItemClic
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Intent in=new Intent(applist.this,viewdetails.class);
+        Intent in=new Intent(applist.this,PostInstalledApps.class);
         in.putExtra("appname",packgeList.get(position));
         in.putExtra("pname",pname.get(position));
         in.putExtra("versionname", versionName.get(position));

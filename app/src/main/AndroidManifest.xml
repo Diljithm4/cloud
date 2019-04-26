@@ -48,6 +48,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Custom_checking_app"/>
+        <activity android:name=".PostInstalledApps"/>
 
     </application>
 

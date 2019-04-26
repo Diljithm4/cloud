@@ -4,6 +4,7 @@ import android.content.Intent;
 
 public class viewdetails {
 
+
     private String PackageName;
     private String ImageName;
     private String Title;
@@ -14,7 +15,7 @@ public class viewdetails {
 
     public String getPackageName() {
         return PackageName;
-        Intent in=new Intent(viewdetails.this,PostInstalledApps.class);
+
     }
 
     public void setPackageName(String packageName) {

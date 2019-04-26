@@ -73,8 +73,8 @@ public class PostInstalledApps extends AppCompatActivity implements View.OnClick
         edt.commit();
         jsonObject=new JSONObject();
         JSONArray jsonArray=new JSONArray();
-        PackageInfo packageInfo=Installedapps.pkgeList.get(Installedapps.pos);
-      Drawable icon=Installedapps.drawables.get(Installedapps.pos);
+        PackageInfo packageInfo=applist.pkgeList.get(applist.pos);
+      Drawable icon=applist.drawables.get(applist.pos);
         String[] per=packageInfo.requestedPermissions;
 
         if(per!=null) {
@@ -109,8 +109,8 @@ public class PostInstalledApps extends AppCompatActivity implements View.OnClick
         btnrvw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ind=new Intent(getApplicationContext(),Review.class);
-                startActivity(ind);
+               // Intent ind=new Intent(getApplicationContext(),Review.class);
+               // startActivity(ind);
             }
         });
     }
@@ -141,7 +141,8 @@ public class PostInstalledApps extends AppCompatActivity implements View.OnClick
                 List<NameValuePair> pa = new ArrayList<>();
                 pa.add(new BasicNameValuePair("obj", jsonObject.toString()));
                 JSONParser js = new JSONParser();
-                JSONObject jb = js.makeHttpRequest(url, "GET", pa);
+                //JSONObject jb = js.makeHttpRequest(url, "GET", pa);
+                JSONObject jb= (JSONObject) js.makeHttpRequest(url,"GET",pa);
                 res=jb.toString();
             }catch (Exception e){}
             return res;
@@ -169,15 +170,16 @@ public class PostInstalledApps extends AppCompatActivity implements View.OnClick
                 edt.commit();
 
                 pd.dismiss();
-                Intent in=new Intent(PostInstalledApps.this,MalwareCheck.class);
-                in.putExtra("pname",pname);
-                in.putExtra("appname",appname);
-                in.putExtra("vname",vname);
-                in.putExtra("category",category);
-                in.putExtra("avgp",avgp);
-                in.putExtra("avgn",avgn);
+                //Intent in=new Intent(PostInstalledApps.this,MalwareCheck.class);
+//                in.putExtra("pname",pname);
+//                in.putExtra("appname",appname);
+//                in.putExtra("vname",vname);
+//                in.putExtra("category",category);
+//                in.putExtra("avgp",avgp);
+//                in.putExtra("avgn",avgn);
 
-                startActivity(in);
+
+               // startActivity(in);
             }catch (Exception e){}
         }
     }

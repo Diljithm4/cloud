@@ -1,5 +1,6 @@
 package com.example.user;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,14 +14,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class cloud_home_new extends AppCompatActivity
 
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static String nw,con;
+    Connectivity conn=new Connectivity();
+    boolean a,b,c,d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        a=conn.isConnected(getApplicationContext());
+        b=conn.isConnectedFast(getApplicationContext());
+        c=conn.isConnectedMobile(getApplicationContext());
+        d=conn.isConnectedWifi(getApplicationContext());
+
+        if(b==true){
+            nw="3G/4G";
+        }
+        else {
+            nw="2G";
+        }
+        if(d==true){
+            nw="wi-fi";
+        }
+
+        Toast.makeText(getApplicationContext(), nw, Toast.LENGTH_LONG).show();
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cloud_home_new);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

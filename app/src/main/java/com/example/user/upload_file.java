@@ -40,9 +40,9 @@ SharedPreferences sh;
         setContentView(R.layout.activity_upload_file);
 
 sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            e7 = (EditText) findViewById(R.id.editText2);
-            b4 = (Button) findViewById(R.id.button5);
-            b5 = (Button) findViewById(R.id.button7);
+            e7 = (EditText) findViewById(R.id.editText22);
+            b4 = (Button) findViewById(R.id.button55);
+            b5 = (Button) findViewById(R.id.button77);
             b4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {

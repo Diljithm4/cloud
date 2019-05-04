@@ -17,9 +17,8 @@
         android:roundIcon="@mipmap/cloud"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".offload">
-
-        </activity>
+        <activity android:name=".bin"></activity>
+        <activity android:name=".offload"></activity>
         <activity android:name=".file_custom" />
         <activity android:name=".file_view" />
         <activity android:name=".video_play2" />
@@ -47,9 +46,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Custom_checking_app"/>
-        <activity android:name=".PostInstalledApps"/>
-
+        <activity android:name=".Custom_checking_app" />
+        <activity android:name=".PostInstalledApps" />
     </application>
 
 </manifest>

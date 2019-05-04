@@ -82,7 +82,7 @@ public class forgot_password extends AppCompatActivity {
                     jobj = (JSONObject) jsonParser.makeHttpRequest(ur, "GET", params);
                     //Toast.makeText(getApplicationContext(),"rere"+ur,Toast.LENGTH_LONG).show();
                 } catch (JSONException e1) {
-                    // TODO Auto-generated catch block
+                     //TODO Auto-generated catch block
                     // Toast.makeText(getApplicationContext(), "e1" + e1, Toast.LENGTH_LONG).show();
                 }
                 String s = null;
@@ -97,7 +97,7 @@ public class forgot_password extends AppCompatActivity {
                     } else {
 
 
-                        Intent i = new Intent(getApplicationContext(), cloud_home_new.class);
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
 
                     }
@@ -105,7 +105,7 @@ public class forgot_password extends AppCompatActivity {
 
                 } catch (Exception e) { // TODO Auto-generated catch block
                     Log.d("err",e+"");
-                    //   Toast.makeText(getApplicationContext(), "e" + e, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "e" + e, Toast.LENGTH_LONG).show();
                 }
 
             }

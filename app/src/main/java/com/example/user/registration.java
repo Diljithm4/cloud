@@ -36,16 +36,11 @@ public class registration extends AppCompatActivity {
 
         e1 = (EditText) findViewById(R.id.editText3);
         e2 = (EditText) findViewById(R.id.editText13);
-        e3 = (EditText) findViewById(R.id.editText21);
+        e3 = (EditText) findViewById(R.id.editText);
         e4 = (EditText) findViewById(R.id.editText22);
         b1 = (Button) findViewById(R.id.button);
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        ip="192.168.43.172";
-
-        SharedPreferences.Editor ed=sh.edit();
-        ed.putString("ip",ip);
-        ed.commit();
         ip=sh.getString("ip","");
         ur="http://"+ip+"/registration";
         b1.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +69,9 @@ public class registration extends AppCompatActivity {
                 try {
 
                     String ss = jobj.getString("task");
+
+                    Toast.makeText(getApplicationContext(), ""+ss , Toast.LENGTH_LONG).show();
+
 
                     if (ss.equals("failed")) {
 

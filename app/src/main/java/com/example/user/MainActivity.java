@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
@@ -29,6 +30,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     EditText e5,e6;
     Button b3,b2;
+    TextView t100;
 
     String ip="";
     SharedPreferences sh;
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         e6=(EditText)findViewById(R.id.editText23);
         b2=(Button)findViewById(R.id.button15);
         b3=(Button)findViewById(R.id.button16);
+        t100=(TextView)findViewById(R.id.textView100);
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         ip="192.168.43.172:5000";
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(),"rere"+ur,Toast.LENGTH_LONG).show();
                 } catch (JSONException e1) {
                     // TODO Auto-generated catch block
-                   // Toast.makeText(getApplicationContext(), "e1" + e1, Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "e1" + e1, Toast.LENGTH_LONG).show();
                 }
                 String s = null;
 
@@ -124,18 +127,25 @@ public class MainActivity extends AppCompatActivity {
 
                 } catch (Exception e) { // TODO Auto-generated catch block
                     Log.d("err",e+"");
-                 //   Toast.makeText(getApplicationContext(), "e" + e, Toast.LENGTH_LONG).show();
+                    //   Toast.makeText(getApplicationContext(), "e" + e, Toast.LENGTH_LONG).show();
                 }
 
             }
         });
-            b2.setOnClickListener(new View.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),registration.class);
                 startActivity(i);
             }
-});
+        });
+        t100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View reset) {
+                Intent i = new Intent(getApplicationContext(),forgot_password.class);
+                startActivity(i);
+            }
+        });
     }
 
-    }
+}
